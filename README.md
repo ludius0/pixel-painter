@@ -7,4 +7,4 @@ It's genuinely fun. It has still small issue and program was done for small sket
 Everything is described in program.
 Modules:  tkinter, pillow, datetime, webbrowser
 
-BTW: I wrote it to make later level 2 program: Finding-path algorithm
+BTW: I wrote it to make later level 2 program: Path-finding algorithm
