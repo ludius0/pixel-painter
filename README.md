@@ -1,3 +1,3 @@
 # pixel-painter
 
-![2020-04-04 19-44-23](https://user-images.githubusercontent.com/57571014/78458107-38a65280-76af-11ea-8d62-54cf981e22c9.png)
+![Screenshot_3](https://user-images.githubusercontent.com/57571014/78458123-4b208c00-76af-11ea-8270-60cadc2947b0.png)
