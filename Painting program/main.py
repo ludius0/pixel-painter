@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import colorchooser
 from PIL import ImageGrab
 from datetime import datetime
+from time import sleep
 import webbrowser
 
 # Set default values
@@ -80,7 +81,7 @@ def fill_logic(x, y, a, b):
     check_fill_loop(color2, storedPos, x, y)
 
 def check_fill_loop(color2, storedPos, x, y):
-    global backGrid
+    global backGrid, canvas
     num = 0
     while num != len(storedPos):
         a = storedPos[0][0]
@@ -114,7 +115,9 @@ def check_fill_loop(color2, storedPos, x, y):
                     storedPos.append((a, b-1, nx-c, ny))
 
         if status == True:
-            del storedPos[0]    
+            del storedPos[0]
+    sleep(0.01)
+    canvas.update()
 
             
 def check_back_grid(x, y): # Correcting grid (setting edges)
@@ -218,6 +221,12 @@ def restart(event):
     root.destroy()
     window()
 
+def paint_blank():
+    global canvas
+    for i in range(int(height/c)):
+        for j in range(int(width/c)):
+            canvas.create_rectangle(j*c, i*c, j*c+c-1, i*c+c-1, fill="white", outline="white")
+
 def window():
     global root, canvas, label1
     # Set up tkinter module
@@ -238,6 +247,8 @@ def window():
     canvas.bind_all(bindSet["Color Pickup"], color_picker)
     canvas.bind_all(bindSet["Save"], screenshot)
     canvas.pack(side=TOP)
+
+    paint_blank()
 
 
     button1 = Button(root, text="Pixel brush")
